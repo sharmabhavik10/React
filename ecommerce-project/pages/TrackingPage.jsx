@@ -1,4 +1,5 @@
 import { Header } from '../src/components/Header'
+import { Link } from 'react-router'
 import './TrackingPage.css'
 
 export function TrackingPage() {

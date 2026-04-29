@@ -3,6 +3,7 @@ import { Homepage } from '../pages/Homepage'
 import { CheckoutPage } from '../pages/CheckoutPage'
 import { OrdersPage } from '../pages/OrdersPage'
 import './App.css'
+import { TrackingPage } from '../pages/TrackingPage'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="orders" element={<OrdersPage />} />
+        <Route path="tracking" element={<TrackingPage />} />
+
 
       </Routes>
 
