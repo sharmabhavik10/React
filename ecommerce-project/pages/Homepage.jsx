@@ -1,14 +1,20 @@
+import { useEffect, useState } from 'react';
 import { Header } from '../src/components/Header';
-import { products } from './products';
+
 import './Homepage.css'
 
 export function Homepage() {
-  fetch('http://localhost:3000/api/products')
-    .then((response) => {
-      return response.json()
-    }).then((data) => {
-      console.log(data);
-    });
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/products')
+      .then((response) =>
+        response.json()).then((data) => {
+          setProducts(data);
+        });
+  }, []);
+
 
   return (
     <>
