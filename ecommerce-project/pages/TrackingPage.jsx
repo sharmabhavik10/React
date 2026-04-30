@@ -25,18 +25,16 @@ export function TrackingPage() {
             Quantity: 1
           </div>
 
-          <img className="product-image" src="images/products/athletic-cotton-socks-6-pairs.jpg" />
+          <img
+            className="product-image"
+            src="images/products/athletic-cotton-socks-6-pairs.jpg"
+            alt="Product"
+          />
 
           <div className="progress-labels-container">
-            <div className="progress-label">
-              Preparing
-            </div>
-            <div className="progress-label current-status">
-              Shipped
-            </div>
-            <div className="progress-label">
-              Delivered
-            </div>
+            <div className="progress-label">Preparing</div>
+            <div className="progress-label current-status">Shipped</div>
+            <div className="progress-label">Delivered</div>
           </div>
 
           <div className="progress-bar-container">
