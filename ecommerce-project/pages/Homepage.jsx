@@ -9,13 +9,13 @@ export function Homepage() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/products')
+    fetch('/api/products')
       .then((response) =>
         response.json()).then((data) => {
           setProducts(data);
         });
 
-    fetch('http://localhost:3000/api/cart-items')
+    fetch('/api/cart-items')
       .then((response) =>
         response.json()).then((data) => {
           setCart(data);
