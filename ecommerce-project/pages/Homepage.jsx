@@ -6,6 +6,7 @@ import './Homepage.css'
 export function Homepage() {
 
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:3000/api/products')
@@ -13,6 +14,13 @@ export function Homepage() {
         response.json()).then((data) => {
           setProducts(data);
         });
+
+    fetch('http://localhost:3000/api/cart-items')
+      .then((response) =>
+        response.json()).then((data) => {
+          setCart(data);
+        });
+
   }, []);
 
 
@@ -20,7 +28,7 @@ export function Homepage() {
     <>
       <title>Ecommerce-Project</title>
 
-      <Header />
+      <Header cart={cart} />
       <div className="home-page">
         <div className="products-grid">
           {products.map((product) => {
