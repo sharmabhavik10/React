@@ -3,10 +3,10 @@ import { Header } from '../src/components/Header';
 
 import './Homepage.css'
 
-export function Homepage() {
+export function Homepage({ cart }) {
 
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+
 
   useEffect(() => {
     fetch('/api/products')
@@ -15,11 +15,7 @@ export function Homepage() {
           setProducts(data);
         });
 
-    fetch('/api/cart-items')
-      .then((response) =>
-        response.json()).then((data) => {
-          setCart(data);
-        });
+
 
   }, []);
 
