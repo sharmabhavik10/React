@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Header } from '../src/components/Header';
-
+import { Header } from '../components/Header';
+import { formatMoney } from '../utils/money';
 import './Homepage.css'
 
 export function Homepage({ cart }) {
@@ -14,9 +14,6 @@ export function Homepage({ cart }) {
         response.json()).then((data) => {
           setProducts(data);
         });
-
-
-
   }, []);
 
 
@@ -48,7 +45,7 @@ export function Homepage({ cart }) {
                 </div>
 
                 <div className="product-price">
-                  ${(product.priceCents / 100).toFixed(2)}
+                  {formatMoney(product.priceCents)}
                 </div>
 
                 <div className="product-quantity-container">
